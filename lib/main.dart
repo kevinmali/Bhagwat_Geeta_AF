@@ -96,6 +96,9 @@ class _HomeState extends State<Home> {
                                 Text(
                                   data[index].bhagvatgitaslok,
                                   style: TextStyle(color: Colors.white),
+                                ),
+                                Divider(
+                                  height: 30,
                                 )
                               ],
                             ),

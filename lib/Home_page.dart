@@ -46,8 +46,8 @@ class _Home_pageState extends State<Home_page> {
                     color: Colors.white,
                   ),
                 ),
-                SizedBox(
-                  height: 80,
+                Divider(
+                  height: 30,
                 ),
                 (eng == true)
                     ? Text(
@@ -55,8 +55,8 @@ class _Home_pageState extends State<Home_page> {
                         style: TextStyle(color: Colors.white, fontSize: 22),
                       )
                     : Text(''),
-                SizedBox(
-                  height: 40,
+                Divider(
+                  height: 30,
                 ),
                 (guj == true)
                     ? Text(
@@ -64,8 +64,8 @@ class _Home_pageState extends State<Home_page> {
                         style: TextStyle(color: Colors.white, fontSize: 22),
                       )
                     : Text(''),
-                SizedBox(
-                  height: 40,
+                Divider(
+                  height: 30,
                 ),
                 (hindi == true)
                     ? Text(
@@ -73,8 +73,8 @@ class _Home_pageState extends State<Home_page> {
                         style: TextStyle(color: Colors.white, fontSize: 22),
                       )
                     : Text(''),
-                SizedBox(
-                  height: 40,
+                Divider(
+                  height: 30,
                 ),
                 (san == true)
                     ? Text(
@@ -82,6 +82,9 @@ class _Home_pageState extends State<Home_page> {
                         style: TextStyle(color: Colors.white, fontSize: 22),
                       )
                     : Text(''),
+                Divider(
+                  height: 30,
+                ),
                 Padding(
                   padding: const EdgeInsets.all(5),
                   child: Row(
