@@ -90,16 +90,28 @@ class _Home_pageState extends State<Home_page> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              eng = !eng;
-                            });
-                          },
-                          child: Text(
-                            "English",
-                            style: TextStyle(color: Colors.black),
-                          )),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            eng = !eng;
+                          });
+                        },
+                        child: Container(
+                            height: 40,
+                            width: 80,
+                            decoration: BoxDecoration(
+                              color: Colors.greenAccent,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            child: Center(
+                              child: Text(
+                                "English",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            )),
+                      ),
                       ElevatedButton(
                           onPressed: () {
                             setState(() {
