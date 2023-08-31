@@ -30,59 +30,63 @@ class _Home_pageState extends State<Home_page> {
             ),
           ),
           SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             child: Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
                 IconButton(
                   onPressed: () {
                     Navigator.pushNamed(context, 'Home');
                   },
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.home_outlined,
                     size: 30,
                     color: Colors.white,
                   ),
                 ),
-                Divider(
+                const Divider(
                   height: 30,
                 ),
                 (eng == true)
                     ? Text(
                         '${jss.english}',
-                        style: TextStyle(color: Colors.white, fontSize: 22),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 22),
                       )
-                    : Text(''),
-                Divider(
+                    : const Text(''),
+                const Divider(
                   height: 30,
                 ),
                 (guj == true)
                     ? Text(
                         "${jss.gujrati}",
-                        style: TextStyle(color: Colors.white, fontSize: 22),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 22),
                       )
-                    : Text(''),
-                Divider(
+                    : const Text(''),
+                const Divider(
                   height: 30,
                 ),
                 (hindi == true)
                     ? Text(
                         "${jss.hindi}",
-                        style: TextStyle(color: Colors.white, fontSize: 22),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 22),
                       )
-                    : Text(''),
-                Divider(
+                    : const Text(''),
+                const Divider(
                   height: 30,
                 ),
                 (san == true)
                     ? Text(
                         "${jss.bhagvatgitaslok}",
-                        style: TextStyle(color: Colors.white, fontSize: 22),
+                        style:
+                            const TextStyle(color: Colors.white, fontSize: 22),
                       )
-                    : Text(''),
-                Divider(
+                    : const Text(''),
+                const Divider(
                   height: 30,
                 ),
                 Padding(
@@ -97,51 +101,112 @@ class _Home_pageState extends State<Home_page> {
                           });
                         },
                         child: Container(
-                            height: 40,
+                            height: 50,
                             width: 80,
-                            decoration: BoxDecoration(
-                              color: Colors.greenAccent,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwIgg1EUTnliT2bc9g17dHiTAdh35nQf4VZ-RQNq1M6mtDUK-SSgv1ut2jt5q7nbZ89I&usqp=CAU"),
+                                  fit: BoxFit.fill),
                               borderRadius: BorderRadius.all(
                                 Radius.circular(20),
                               ),
                             ),
-                            child: Center(
+                            child: const Center(
                               child: Text(
                                 "English",
-                                style: TextStyle(color: Colors.black),
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
                               ),
                             )),
                       ),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              guj = !guj;
-                            });
-                          },
-                          child: Text(
-                            "Gujrati",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              hindi = !hindi;
-                            });
-                          },
-                          child: Text(
-                            "Hindi",
-                            style: TextStyle(color: Colors.black),
-                          )),
-                      ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              san = !san;
-                            });
-                          },
-                          child: Text(
-                            "Sanskrit",
-                            style: TextStyle(color: Colors.black),
-                          )),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            guj = !guj;
+                          });
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 80,
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwIgg1EUTnliT2bc9g17dHiTAdh35nQf4VZ-RQNq1M6mtDUK-SSgv1ut2jt5q7nbZ89I&usqp=CAU"),
+                                fit: BoxFit.fill),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                          ),
+                          child: const Center(
+                            child: Text(
+                              "Gujrati",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18),
+                            ),
+                          ),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            hindi = !hindi;
+                          });
+                        },
+                        child: Container(
+                            height: 50,
+                            width: 80,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwIgg1EUTnliT2bc9g17dHiTAdh35nQf4VZ-RQNq1M6mtDUK-SSgv1ut2jt5q7nbZ89I&usqp=CAU"),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "Hindi",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18),
+                              ),
+                            )),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            eng = !eng;
+                          });
+                        },
+                        child: Container(
+                            height: 50,
+                            width: 80,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                  image: NetworkImage(
+                                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDwIgg1EUTnliT2bc9g17dHiTAdh35nQf4VZ-RQNq1M6mtDUK-SSgv1ut2jt5q7nbZ89I&usqp=CAU"),
+                                  fit: BoxFit.fill),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(20),
+                              ),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                "Sanskrit",
+                                style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            )),
+                      ),
                     ],
                   ),
                 )
