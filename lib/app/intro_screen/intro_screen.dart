@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -8,6 +9,7 @@ class intro_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(),
       body: IntroductionScreen(
         pages: [
@@ -21,7 +23,7 @@ class intro_page extends StatelessWidget {
                 width: 400,
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage("lib/Modal/Gif/bhagwatgeeta.gif"),
+                        image: AssetImage("lib/asset/Gif/bhagwatgeeta.gif"),
                         fit: BoxFit.fill)),
               ),
             ),
@@ -37,7 +39,7 @@ class intro_page extends StatelessWidget {
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                        "lib/Modal/Gif/the-bhagavad-gita-lord-krishna.gif"),
+                        "lib/asset/Gif/the-bhagavad-gita-lord-krishna.gif"),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -45,14 +47,21 @@ class intro_page extends StatelessWidget {
             ),
           ),
         ],
-        done: Text("done"),
+        done: Text(
+          "done",
+          style: GoogleFonts.acme(color: Colors.white, fontSize: 20),
+        ),
         onDone: () async {
           SharedPreferences preferences = await SharedPreferences.getInstance();
           preferences.setBool("isIntroVisited", true);
           Navigator.pushReplacementNamed(context, 'Home');
         },
-        next: Text("Next"),
+        next: Text(
+          "Next",
+          style: GoogleFonts.acme(color: Colors.white, fontSize: 20),
+        ),
         showNextButton: true,
+        dotsContainerDecorator: BoxDecoration(color: Colors.black),
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'Modal/Geeta_modal.dart';
+import '../modal/Geeta_modal.dart';
 
 bool eng = false;
 bool guj = false;
@@ -19,7 +19,7 @@ class Home_page extends StatelessWidget {
             child: Container(
               height: MediaQuery.of(context).size.height / 1,
               child: Image.asset(
-                'lib/Modal/Images/bhagwati5.jpg',
+                'lib/asset/Images/bhagwati5.jpg',
                 fit: BoxFit.fill,
               ),
             ),

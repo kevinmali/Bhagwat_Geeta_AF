@@ -1,12 +1,11 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:geeta_pr/Views/intro_screen.dart';
+import 'package:geeta_pr/app/intro_screen/intro_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'Home_page.dart';
-import 'Modal/Geeta_modal.dart';
-import 'Views/splesh_screen.dart';
+import 'app/home_screen/views/Home_page.dart';
+import 'app/home_screen/modal/Geeta_modal.dart';
+import 'app/splesh_screen/splesh_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
