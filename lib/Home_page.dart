@@ -6,14 +6,9 @@ bool guj = false;
 bool hindi = false;
 bool san = true;
 
-class Home_page extends StatefulWidget {
+class Home_page extends StatelessWidget {
   Home_page({Key? key}) : super(key: key);
 
-  @override
-  State<Home_page> createState() => _Home_pageState();
-}
-
-class _Home_pageState extends State<Home_page> {
   @override
   Widget build(BuildContext context) {
     jsonmodel jss = ModalRoute.of(context)!.settings.arguments as jsonmodel;
@@ -96,9 +91,7 @@ class _Home_pageState extends State<Home_page> {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          setState(() {
-                            eng = !eng;
-                          });
+                          eng = !eng;
                         },
                         child: Container(
                             height: 50,
@@ -124,9 +117,7 @@ class _Home_pageState extends State<Home_page> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          setState(() {
-                            guj = !guj;
-                          });
+                          guj = !guj;
                         },
                         child: Container(
                           height: 50,
@@ -153,9 +144,7 @@ class _Home_pageState extends State<Home_page> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          setState(() {
-                            hindi = !hindi;
-                          });
+                          hindi = !hindi;
                         },
                         child: Container(
                             height: 50,
@@ -181,9 +170,7 @@ class _Home_pageState extends State<Home_page> {
                       ),
                       GestureDetector(
                         onTap: () {
-                          setState(() {
-                            eng = !eng;
-                          });
+                          eng = !eng;
                         },
                         child: Container(
                             height: 50,
@@ -209,7 +196,7 @@ class _Home_pageState extends State<Home_page> {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
           ),
