@@ -6,9 +6,14 @@ bool guj = false;
 bool hindi = false;
 bool san = true;
 
-class Home_page extends StatelessWidget {
+class Home_page extends StatefulWidget {
   Home_page({Key? key}) : super(key: key);
 
+  @override
+  State<Home_page> createState() => _Home_pageState();
+}
+
+class _Home_pageState extends State<Home_page> {
   @override
   Widget build(BuildContext context) {
     jsonmodel jss = ModalRoute.of(context)!.settings.arguments as jsonmodel;
@@ -91,7 +96,9 @@ class Home_page extends StatelessWidget {
                     children: [
                       GestureDetector(
                         onTap: () {
-                          eng = !eng;
+                          setState(() {
+                            eng = !eng;
+                          });
                         },
                         child: Container(
                             height: 50,
@@ -117,7 +124,9 @@ class Home_page extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          guj = !guj;
+                          setState(() {
+                            guj = !guj;
+                          });
                         },
                         child: Container(
                           height: 50,
@@ -144,7 +153,9 @@ class Home_page extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          hindi = !hindi;
+                          setState(() {
+                            hindi = !hindi;
+                          });
                         },
                         child: Container(
                             height: 50,
@@ -170,7 +181,7 @@ class Home_page extends StatelessWidget {
                       ),
                       GestureDetector(
                         onTap: () {
-                          eng = !eng;
+                          setState(() {});
                         },
                         child: Container(
                             height: 50,

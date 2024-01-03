@@ -9,8 +9,7 @@ class intro_page extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
-      appBar: AppBar(),
+      // appBar: AppBar(),
       body: IntroductionScreen(
         pages: [
           PageViewModel(
@@ -19,13 +18,26 @@ class intro_page extends StatelessWidget {
                 "Welcome to Bhagwat Geeta.This is a description of how it Redding.",
             image: Center(
               child: Container(
+                // margin: EdgeInsets.only(top: 20),
                 height: 460,
-                width: 400,
+                width: double.infinity,
                 decoration: BoxDecoration(
+                    color: Colors.black,
                     image: DecorationImage(
                         image: AssetImage("lib/asset/Gif/bhagwatgeeta.gif"),
-                        fit: BoxFit.fill)),
+                        fit: BoxFit.cover)),
               ),
+            ),
+            decoration: const PageDecoration(
+              pageColor: Colors.black,
+              titleTextStyle: TextStyle(
+                color: Colors.white,
+                fontSize: 25,
+              ),
+              bodyTextStyle: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20.0,
+                  color: Colors.white),
             ),
           ),
           PageViewModel(
@@ -45,11 +57,19 @@ class intro_page extends StatelessWidget {
                 ),
               ),
             ),
+            decoration: const PageDecoration(
+              pageColor: Colors.black,
+              titleTextStyle: TextStyle(color: Colors.white, fontSize: 25),
+              bodyTextStyle: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 20.0,
+                  color: Colors.white),
+            ),
           ),
         ],
         done: Text(
           "done",
-          style: GoogleFonts.acme(color: Colors.white, fontSize: 20),
+          style: GoogleFonts.acme(color: Colors.black, fontSize: 20),
         ),
         onDone: () async {
           SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -58,10 +78,18 @@ class intro_page extends StatelessWidget {
         },
         next: Text(
           "Next",
-          style: GoogleFonts.acme(color: Colors.white, fontSize: 20),
+          style: GoogleFonts.acme(color: Colors.black, fontSize: 20),
         ),
         showNextButton: true,
-        dotsContainerDecorator: BoxDecoration(color: Colors.black),
+        dotsDecorator: DotsDecorator(
+          // size: const Size.square(10.0),
+          activeSize: const Size(20.0, 10.0),
+          activeColor: Colors.black,
+          color: Colors.black26,
+          spacing: const EdgeInsets.symmetric(horizontal: 3.0),
+          activeShape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+        ),
       ),
     );
   }
