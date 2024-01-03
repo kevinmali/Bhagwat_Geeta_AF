@@ -64,8 +64,8 @@ Project Evaluation:
 - Presentation quality and clarity of communication
 
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/dc62f0d8-bf66-445f-9e52-b4ba16bdb5ac" width="250px">
-<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/0437ffc1-ec2c-4e5f-a9c0-258525e8a49b" width="250px">
-<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/c78b8951-aaea-44b5-b2ae-bfa6ed473c65" width="250px">
+<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/07bd8479-997d-407d-84ba-e1e35261449e" width="250px">
+<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/7756b0ef-6d12-4e5f-ae47-ea43a9f30e85" width="250px">
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/e144f4ad-e702-45c1-9901-fe4039db9ec0" width="250px">
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/83709e0b-823b-4629-a009-f915d29e2873" width="250px">
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/cbe1009c-fcbe-4f5f-b93e-6e9ae72dbca9" width="250px">
