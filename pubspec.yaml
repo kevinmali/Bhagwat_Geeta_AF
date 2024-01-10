@@ -37,7 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   introduction_screen:
   shared_preferences: ^2.2.0
-  google_fonts: 
+  google_fonts:
+  provider:
 
 dev_dependencies:
   flutter_test:
@@ -66,6 +67,7 @@ flutter:
     - json.json
     - lib/asset/Gif/
     - lib/asset/Images/
+
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

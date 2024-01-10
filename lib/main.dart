@@ -1,7 +1,9 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:geeta_pr/app/home_screen/provider/english_provider.dart';
 import 'package:geeta_pr/app/intro_screen/intro_screen.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app/home_screen/views/Home_page.dart';
 import 'app/home_screen/modal/Geeta_modal.dart';
@@ -12,110 +14,133 @@ void main() async {
 
   SharedPreferences preferences = await SharedPreferences.getInstance();
   bool isvisited = preferences.getBool("isIntroVisited") ?? false;
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(useMaterial3: true),
-    routes: {
-      '/': (context) => Splash(),
-      'Intro': (context) => intro_page(),
-      'Home': (context) => Home(),
-      'Home_screen': (context) => Home_page()
-    },
-  ));
+  runApp(
+    MultiProvider(
+        providers: [
+          ChangeNotifierProvider<EnglishProvider>(
+              create: (ctx) => EnglishProvider()),
+        ],
+        builder: (ctx, _) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(useMaterial3: true),
+            routes: {
+              '/': (context) => const Splash(),
+              'Intro': (context) => const intro_page(),
+              'Home': (context) => const Home(),
+              'Home_screen': (context) => const Home_page()
+            },
+          );
+        }),
+  );
 }
 
-class Home extends StatefulWidget {
-  Home({Key? key}) : super(key: key);
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
 
-  @override
-  State<Home> createState() => _HomeState();
-}
-
-class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Stack(
-          children: [
-            Container(
-              height: MediaQuery.of(context).size.height / 1,
-              child: Image.asset('lib/Modal/Images/bhagwati5.jpg',
-                  fit: BoxFit.fill),
-            ),
-            FutureBuilder(
-              future: rootBundle.loadString("json.json"),
-              builder: (BuildContext context, AsyncSnapshot snapshot) {
-                if (snapshot.hasError) {
-                  return Center(
-                    child: Text("${snapshot.error}"),
-                  );
-                } else if (snapshot.hasData) {
-                  String JsonData = snapshot.data;
-                  List myData = jsonDecode(JsonData);
-                  List data =
-                      myData.map((e) => jsonmodel.fromjson(Data: e)).toList();
-                  return GridView.builder(
-                    scrollDirection: Axis.vertical,
-                    physics: BouncingScrollPhysics(),
-                    padding: EdgeInsets.all(10),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                    ),
-                    itemCount: data.length,
-                    itemBuilder: (context, index) {
-                      return GestureDetector(
-                        onTap: () {
-                          jsonmodel js = jsonmodel(
-                              id: data[index].id,
-                              bhagvatgitaslok: data[index].bhagvatgitaslok,
-                              english: data[index].english,
-                              hindi: data[index].hindi,
-                              gujrati: data[index].gujrati,
-                              chpter: data[index].chpter);
-                          Navigator.pushNamed(context, 'Home_screen',
-                              arguments: js);
-                        },
-                        child: Container(
-                          height: 300,
-                          width: 240,
-                          padding: EdgeInsets.all(5),
-                          color: Colors.transparent,
-                          child: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                Text(
+      body: Stack(
+        children: [
+          Container(
+            height: MediaQuery.of(context).size.height / 1,
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage("lib/asset/Gif/back.gif"),
+                    fit: BoxFit.cover),
+                color: Colors.black),
+          ),
+          FutureBuilder(
+            future: rootBundle.loadString("json.json"),
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasError) {
+                return Center(
+                  child: Text("${snapshot.error}"),
+                );
+              } else if (snapshot.hasData) {
+                String JsonData = snapshot.data;
+                List myData = jsonDecode(JsonData);
+                List data =
+                    myData.map((e) => jsonmodel.fromjson(Data: e)).toList();
+                return GridView.builder(
+                  scrollDirection: Axis.vertical,
+                  physics: const BouncingScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 1, mainAxisExtent: 180),
+                  itemCount: data.length,
+                  itemBuilder: (context, index) {
+                    return GestureDetector(
+                      onTap: () {
+                        jsonmodel js = jsonmodel(
+                            id: data[index].id,
+                            bhagvatgitaslok: data[index].bhagvatgitaslok,
+                            english: data[index].english,
+                            hindi: data[index].hindi,
+                            gujrati: data[index].gujrati,
+                            chpter: data[index].chpter);
+                        Navigator.pushNamed(context, 'Home_screen',
+                            arguments: js);
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          image: DecorationImage(
+                              image: AssetImage("lib/asset/Images/bhagwat.jpg"),
+                              opacity: 0.4,
+                              fit: BoxFit.cover),
+                        ),
+                        margin: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(5),
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Center(
+                                child: Text(
                                   data[index].chpter.toString(),
                                   style: TextStyle(
-                                      color: Colors.white, fontSize: 24),
+                                      color: Colors.white.withOpacity(0.75),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      fontFamily: AutofillHints.jobTitle),
                                 ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
+                              ),
+                              const SizedBox(
+                                  // height: 10,
+                                  ),
+                              Center(
+                                child: Text(
                                   data[index].bhagvatgitaslok,
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(
+                                      color: Colors.white.withOpacity(0.75),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                      fontFamily: AutofillHints.jobTitle),
                                 ),
-                                Divider(
-                                  height: 30,
-                                )
-                              ],
-                            ),
+                              ),
+                              // const Divider(
+                              //   height: 20,
+                              //   color: Colors.black,
+                              // )
+                            ],
                           ),
                         ),
-                      );
-                    },
-                  );
-                }
-                return Container(
-                  height: MediaQuery.of(context).size.height / 1,
-                  child: Image.asset('lib/Modal/Images/bhagwat3.jpg',
-                      fit: BoxFit.fill),
+                      ),
+                    );
+                  },
                 );
-              },
-            ),
-          ],
-        ),
+              }
+              return Center(
+                child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 1,
+                  child: Image.asset('lib/asset/Images/bhagwat3.jpg',
+                      fit: BoxFit.fill),
+                ),
+              );
+            },
+          ),
+        ],
       ),
     );
   }
