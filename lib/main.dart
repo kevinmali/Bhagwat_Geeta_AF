@@ -28,7 +28,7 @@ void main() async {
               '/': (context) => const Splash(),
               'Intro': (context) => const intro_page(),
               'Home': (context) => const Home(),
-              'Home_screen': (context) => const Home_page()
+              'Home_screen': (context) => Home_page()
             },
           );
         }),
@@ -47,7 +47,7 @@ class Home extends StatelessWidget {
             height: MediaQuery.of(context).size.height / 1,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage("lib/asset/Gif/back.gif"),
+                    image: AssetImage("lib/asset/Images/images.jpg"),
                     fit: BoxFit.cover),
                 color: Colors.black),
           ),
@@ -85,12 +85,12 @@ class Home extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(25),
-                          image: DecorationImage(
+                          image: const DecorationImage(
                               image: AssetImage("lib/asset/Images/bhagwat.jpg"),
-                              opacity: 0.4,
+                              opacity: 0.1,
                               fit: BoxFit.cover),
                         ),
-                        margin: EdgeInsets.all(10),
+                        margin: const EdgeInsets.all(10),
                         padding: const EdgeInsets.all(5),
                         child: SingleChildScrollView(
                           child: Column(
