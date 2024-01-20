@@ -1,4 +1,4 @@
-                                                                                                         Project Definition: Bhagvat Geeta Mobile App (Departure)
+Project Definition: Bhagvat Geeta Mobile App (Departure)
 
 Project Description:
 "Departure" is a mobile application aimed at providing a comprehensive and user-friendly
@@ -66,7 +66,7 @@ Project Evaluation:
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/dc62f0d8-bf66-445f-9e52-b4ba16bdb5ac" width="250px">
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/07bd8479-997d-407d-84ba-e1e35261449e" width="250px">
 <img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/7756b0ef-6d12-4e5f-ae47-ea43a9f30e85" width="250px">
-<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/e144f4ad-e702-45c1-9901-fe4039db9ec0" width="250px">
-<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/83709e0b-823b-4629-a009-f915d29e2873" width="250px">
-<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/cbe1009c-fcbe-4f5f-b93e-6e9ae72dbca9" width="250px">
-<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/ad59deba-9800-45e6-baf2-ce72b00de22d" width="250px">
+<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/9086dfd4-7fbd-4382-9a8b-9f84bab3111e" width="250px">
+<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/b79ac636-0ae0-4f0a-87b4-b45dfc0db22e" width="250px">
+<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/83dec390-667f-448c-92b1-a1e2e15ba688" width="250px">
+<img src="https://github.com/kevinmali/Bhagwat_Geeta_AF/assets/132121875/c198ca48-b9c4-43b2-87aa-a2c1469929a1)" width="250px">
