@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'app/home_screen/views/Home_page.dart';
 import 'app/home_screen/modal/Geeta_modal.dart';
+import 'app/intro_screen/create_intro_page.dart';
 import 'app/splesh_screen/splesh_screen.dart';
 
 void main() async {
@@ -26,7 +27,8 @@ void main() async {
             theme: ThemeData(useMaterial3: true),
             routes: {
               '/': (context) => const Splash(),
-              'Intro': (context) => const intro_page(),
+              'intro': (context) => const OnboardingScreen(),
+              // 'Intro': (context) => const intro_page(),
               'Home': (context) => const Home(),
               'Home_screen': (context) => Home_page()
             },

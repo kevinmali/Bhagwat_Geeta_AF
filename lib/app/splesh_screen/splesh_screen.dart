@@ -10,7 +10,7 @@ class Splash extends StatelessWidget {
     Timer(
       Duration(seconds: 3),
       () {
-        Navigator.pushReplacementNamed(context, 'Intro');
+        Navigator.pushReplacementNamed(context, 'intro');
       },
     );
     return Scaffold(
