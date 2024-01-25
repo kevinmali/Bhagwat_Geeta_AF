@@ -85,7 +85,7 @@ class _OnboardingScreen extends State<OnboardingScreen> {
                       style: GoogleFonts.montserrat(
                         fontWeight: FontWeight.w400,
                         fontSize: 14,
-                        color: const Color(0xff727587),
+                        color: Colors.black,
                       ),
                     )
                   ],
@@ -153,7 +153,7 @@ class _OnboardingScreen extends State<OnboardingScreen> {
       width: 8.0,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: isActive ? const Color(0XFFE77711) : const Color(0XFFDADEEB),
+        color: isActive ? Colors.black : const Color(0XFFDADEEB),
       ),
     );
   }
